@@ -10,9 +10,12 @@ call plug#begin('~/.vim/plugged')
 
     "Git manager
     Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
     "Finder
-    Plug 'ctrlpvim/ctrlp.vim'
+    "Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
 
     "Load sytax plugins
     Plug 'd3vas3m/Improved-Syntax-Highlighting-Vim'
@@ -46,8 +49,11 @@ call plug#begin('~/.vim/plugged')
     "All script tags
     Plug 'vim-scripts/taglist.vim'
 
-    "Plug 'ryanoasis/vim-devicons'
-    "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    "Cursor animation
+    Plug 'danilamihailov/beacon.nvim'
+
+    "Markdown viewer
+    Plug 'iamcco/markdown-preview.nvim'
 
     call plug#end()
 
@@ -60,7 +66,7 @@ colorscheme snazzy
 let g:airline_theme='snazzy'
 
 let mapleader=","
-set mouse=v
+set mouse=r
 
 "Avoid Escape
 :imap jj <Esc>
@@ -68,25 +74,27 @@ set mouse=v
 
 nmap <F6> :NERDTreeToggle<CR>
 nmap <F7> :TlistToggle<CR>
-"Deoplete Config
-"let g:deoplete#enable_at_startup = 1
-"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+nmap <C-p> :FZF<CR>
 
 "Vim-arline-theme Config
 let g:airline_theme='simple' "
 
 let g:python_highlight_all = 1
 
-" loading the plugin
-let g:webdevicons_enable = 1
-" adding the flags to NERDTree
-let g:webdevicons_enable_nerdtree = 1
-
 "Vim-highlightedyank Config
 hi HighlightedyankRegion cterm=reverse gui=reverse
 " set highlight duration time to 1000 ms, i.e., 1 second
 let g:highlightedyank_highlight_duration = 1000
+
+
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+nnoremap ; :
+
+"Git
+noremap <silent> <Leader>gd :Git diff<cr>
+noremap <silent> <Leader>gk :!gitk<cr>
+noremap <silent> <Leader>gkf :!gitk %:p<cr>
 
 "Clang
 noremap <silent> <Leader>cg :!clang++ %:p<cr>
