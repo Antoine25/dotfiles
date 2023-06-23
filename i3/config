@@ -9,12 +9,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec "setxkbmap us"
-exec "setxkbmap -option compose:caps"
+exec "setxkbmap fr"
+# exec "setxkbmap -option compose:caps"
 
 set $mod Mod4
 
 for_window [class="^.*"] border pixel 2
+
+exec feh --bg-scale '/home/amartin/Pictures/02_Fond-Bleu-HD.jpg'
 
 # Font for window titles. Will also be used by the bar unless a different #ifont
 # is used in the bar {} block below.
@@ -33,9 +35,6 @@ font pango:Noto Sans 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -44,8 +43,10 @@ bindsym $mod+c kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun -show-icons -modi drun
+bindsym $mod+Shift+d exec rofi -show run -modi run -show-icons -sidebar-mode -drun-match-fields name -drun-icon-theme Papirus -drun-display-format "{name}" -drun-history-file ~/.cache/rofi/rofi_history -drun-show-actions -drun-actions-file ~/.config/rofi/newsboat.sh
 
 bindsym $mod+Shift+p exec i3lock-fancy
+# bindsym $mod+Shift+p exec /home/amartin/.config/scripts/lock
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -82,6 +83,9 @@ bindsym $mod+g split h
 # split in vertical orientation
 bindsym $mod+v split v
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -95,6 +99,9 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# sticky window toggle
+bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+q focus parent
@@ -138,6 +145,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+ccedilla move container to workspace $ws9
 bindsym $mod+Shift+agrave move container to workspace $ws10
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -177,5 +185,5 @@ bindsym $mod+r mode "resize"
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bar {
-       status_command i3status
+       status_command i3blocks
 }
