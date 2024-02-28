@@ -1,19 +1,31 @@
 [
-{ "keys": ["ctrl+up"], "command": "travel_to_pane", "args": {"direction": "up"} },
-{ "keys": ["ctrl+tab+right"], "command": "travel_to_pane", "args": {"direction": "right"} },
-{ "keys": ["ctrl+down"], "command": "travel_to_pane", "args": {"direction": "down"} },
-{ "keys": ["ctrl+tab+left"], "command": "travel_to_pane", "args": {"direction": "left"} },
+/*{ "keys": ["ctrl+up"], "command": "travel_to_pane", "args": {"direction": "up"} },
+{ "keys": ["ctrl+right"], "command": "travel_to_pane", "args": {"direction": "right"} },
+{ "keys": ["ctrl+down"], "command": "travel_to_pane", "args": {"direction": "down"} },*/
+/*{ "keys": ["ctrl+'"], "command": "new_pane" },
+{ "keys": ["ctrl+/"], "command": "close_pane" },*/
+//{ "keys": ["ctrl+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+//{ "keys": ["ctrl+right"], "command": "focus_neighboring_group" },
+/*
 { "keys": ["ctrl+shift+right"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
 { "keys": ["ctrl+shift+left"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
 { "keys": ["ctrl+shift+down"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
 { "keys": ["ctrl+shift+up"], "command": "carry_file_to_pane", "args": {"direction": "up"} },
-{ "keys": ["ctrl+!"], "command": "destroy_pane", "args": {"direction": "self"} },
-{ "keys": ["ctrl+&"], "command": "find_all_under" },
+{ "keys": ["ctrl+!"], "command": "destroy_pane", "args": {"direction": "self"} },*/
+{ "keys": ["ctrl+1"], "command": "find_all_under" },
+{ "keys": ["ctrl+`"], "command": "toggle_menu" },
 { "keys": ["ctrl+q"], "command": "toggle_side_bar" },
 { "keys": ["ctrl+u"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
 { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false}},
-{ "keys": ["ctrl+é"], "command": "move_to", "args": {"to": "bol", "extend": false}},
+{ "keys": ["ctrl+2"], "command": "move_to", "args": {"to": "bol", "extend": false}},
 { "keys": ["ctrl+w"], "command": "delete_word", "args": { "forward": false }},
 { "keys": ["ctrl+d"], "command": "close" },
 { "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" },
+{ "keys": ["f1"], "command": "goto_definition" },
+{ "keys": ["shift+f12"], "command": "goto_reference" },
+{ "keys": ["alt+-"], "command": "jump_back" },
+{ 
+    "keys"    : ["f5"], 
+    "command" : "refresh_folder_list" 
+},
 ]
