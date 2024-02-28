@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/amartin/.oh-my-zsh"
-export HISTSIZE=50000
+export HISTSIZE=500000
 export HISTFILE=~/.zshhistory
 export SAVEHIST=10000
 export BLOCK_SIZE=human-readable
@@ -80,6 +80,7 @@ plugins=(
 	themes
 	autojump
 	jira
+	web-search
 	)
 
 source $ZSH/oh-my-zsh.sh

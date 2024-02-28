@@ -1,0 +1,32 @@
+##
+## CTAFCONF
+##
+## You can edit this file, it will never be modified by the ctafconf
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias go='git checkout '
+alias gk='gitk --all&'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gd='git diff'
+alias gf='git fetch --all'
+alias gp='git pull --rebase'
+alias gsa='git stash'
+alias gsp='git stash pop'
+alias gfa='git fetch --all'
+alias zshrc='cd; vim .zshrc.user'
+alias n='nautilus'
+alias git_conf='cat ~/.gitconfig'
+alias s1='~/.config/i3/screen_config_1.sh'
+alias s2='~/.config/i3/screen_config_2.sh'
+alias wop='~/.config/i3/open_workspace.sh'
+alias wcl='~/.config/i3/close_workspace.sh'
+alias ws='web_search google'
+
+
+export WORKON_HOME=~/Envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+PATH=$PATH:~/.local/bin/:~/bin/
+
